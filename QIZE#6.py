@@ -16,6 +16,8 @@ def func_exit() :
 
 def func_zoom() :
     value = askinteger("확대배수", "확대할 배수를 입력하세요", minvalue=2, maxvalue=8)
+    if value == None :
+        return
     photo = PhotoImage(file=filename)
     photo = photo.zoom(value, value)
     pLabel.configure(image = photo)
@@ -23,6 +25,8 @@ def func_zoom() :
 
 def func_sub() :
     value = askinteger("축소배수", "축소할 배수를 입력하세요", minvalue=2, maxvalue=8)
+    if value == None :
+        return
     photo = PhotoImage(file=filename)
     photo = photo.subsample(value, value)
     pLabel.configure(image = photo)
